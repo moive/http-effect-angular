@@ -8,6 +8,10 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { UsersModule } from './users/users.module';
 
+import { StoreModule } from '@ngrx/store';
+import { appReducers } from './store/app.reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -16,6 +20,11 @@ import { UsersModule } from './users/users.module';
     SharedModule,
     UsersModule,
     HttpClientModule,
+    StoreModule.forRoot(appReducers),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: false,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
