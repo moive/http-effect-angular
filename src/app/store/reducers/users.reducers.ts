@@ -1,14 +1,14 @@
 import { createReducer, on } from '@ngrx/store';
 import { IUser } from 'src/app/models/user.model';
 import { loadUsers, loadUsersSuccess, loadUsersError } from '../actions/';
-export interface UserState {
+export interface UsersState {
   users: IUser[];
   loaded: boolean;
   loading: boolean;
   error: any;
 }
 
-export const usersInitialState: UserState = {
+export const usersInitialState: UsersState = {
   users: [],
   loaded: false,
   loading: false,
