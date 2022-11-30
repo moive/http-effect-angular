@@ -10,7 +10,9 @@ import { UsersModule } from './users/users.module';
 
 import { StoreModule } from '@ngrx/store';
 import { appReducers } from './store/app.reducers';
+import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { AllEffects } from './store/effects/index';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,6 +23,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     UsersModule,
     HttpClientModule,
     StoreModule.forRoot(appReducers),
+    EffectsModule.forRoot(AllEffects),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: false,
