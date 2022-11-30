@@ -13,4 +13,10 @@ export class UserService {
   getUsers() {
     return this.http.get(`${this.url}/users`).pipe(map((res: any) => res.data));
   }
+
+  getUserById(id: string) {
+    return this.http
+      .get(`${this.url}/user/${id}`)
+      .pipe(map((resp: any) => resp.data));
+  }
 }
