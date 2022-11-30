@@ -31,6 +31,7 @@ export const UserReducer = createReducer(
     ...state,
     loading: false,
     loaded: false,
+    user: null,
     error: {
       url: payload.url,
       name: payload.name,
