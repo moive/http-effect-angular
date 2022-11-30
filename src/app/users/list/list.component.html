@@ -1,1 +1,19 @@
-<p>list works!</p>
+<div class="row">
+  <div
+    class="col-sm-6 col-lg-4 col-xl-3 my-2"
+    *ngFor="let user of users; trackBy: trackByFn"
+  >
+    <div class="card">
+      <img
+        [src]="user.avatar"
+        class="card-img-top"
+        alt="{{ user.first_name }} {{ user.last_name }}"
+      />
+      <div class="card-body">
+        <h5 class="card-title">{{ user.first_name }} {{ user.last_name }}</h5>
+        <p class="card-text">Some quick example text to build.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+</div>
